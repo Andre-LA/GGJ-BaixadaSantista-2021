@@ -43,6 +43,10 @@ public class SubwayStation : MonoBehaviour
         int lineIndex,
         int shadowDensity
     ) {
+        Debug.Log("!!Subway Settings!! " + string.Concat(
+            lineColor.ToString(), "_", lineIndex.ToString()
+        ));
+
         stationIndex = lineIndex;
         shadowDensity = Random.Range(shadowDensity - 10, shadowDensity + 10);
 
