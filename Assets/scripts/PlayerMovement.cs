@@ -49,7 +49,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
     void OnTriggerEnter(Collider col) {
-        if (col.CompareTag("ExitTrigger") && GameStages.Instance.CanExit()) {
+        if (col.CompareTag("ExitTrigger")) {
             GameStages.Instance.GameExit();
         }
     }

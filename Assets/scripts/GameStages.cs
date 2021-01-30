@@ -19,10 +19,16 @@ public class GameStages : MonoBehaviour
 
     bool inTransition;
 
+    public Collider exitCollider;
+
     void Awake() {
         if (Instance != null)
             Debug.LogWarning("Instance is being overwritten!!");
         Instance = this;
+    }
+
+    void Start() {
+        Red_1();
     }
 
 #region Routes
@@ -106,8 +112,10 @@ public class GameStages : MonoBehaviour
             case SubwayStation.LineColor.Yellow: GoNextYellow(lineIndex); break;
         }
 
-        playerTr.position = station.refTeleport.position;
-        playerTr.rotation = station.refTeleport.rotation;
+        var stationToTeleport = lineColor == stationLine1.GetLineColor() ? stationLine1 : stationLine2;
+
+        playerTr.position = stationToTeleport.refTeleport.position;
+        playerTr.rotation = stationToTeleport.refTeleport.rotation;
 
         yield return StartCoroutine(Transition(false));
     }
@@ -135,9 +143,10 @@ public class GameStages : MonoBehaviour
 
     void GoNextRed(int lineIndex) {
         Debug.Log("GoNextRed: " + lineIndex.ToString());
+        SetExitLockState(true);
 
         switch(lineIndex) {
-            case 1: Red_2(); break;
+            case 1: SetExitLockState(false); Red_2(); break;
             case 2: Red_3(); break;
             case 3: Red_4(); break;
             case 4: Red_1(); break;
@@ -145,7 +154,8 @@ public class GameStages : MonoBehaviour
     }
 
     void GoNextBlue(int lineIndex) {
-        Debug.Log("GoNextRed: " + lineIndex.ToString());
+        Debug.Log("GoNextBlue: " + lineIndex.ToString());
+        SetExitLockState(true);
 
         switch(lineIndex) {
             case 1: Blue_2(); break;
@@ -156,7 +166,8 @@ public class GameStages : MonoBehaviour
     }
 
     void GoNextYellow(int lineIndex) {
-        Debug.Log("GoNextRed: " + lineIndex.ToString());
+        Debug.Log("GoNextYellow: " + lineIndex.ToString());
+        SetExitLockState(true);
 
         switch(lineIndex) {
             case 1: Yellow_2(); break;
@@ -177,21 +188,13 @@ public class GameStages : MonoBehaviour
         Gizmos.DrawWireSphere(divpos, 0.5f);
     }
 
-    [ContextMenu("Teste 1!")]
-    public void TESTE1() {
-        GoNextRed(1);
-    }
-
     public void Interacted(RaycastHit hit) {
         var puzzle = hit.transform.GetComponent<Puzzle>();
-        if (puzzle != null) {
+        if (puzzle != null && puzzle.puzzleIndex == currentPuzzle) {
             puzzleStates[puzzle.puzzleIndex] = true;
+            currentPuzzle++;
             PhoneMessage.Instance.Sing();
         }
-    }
-
-    public void PuzzleSolved(int i) {
-        puzzleStates[i] = true;
     }
 
     public bool CanExit() {
@@ -200,6 +203,15 @@ public class GameStages : MonoBehaviour
                 return false;
         }
         return true;
+    }
+
+    void SetExitLockState(bool _lock) {
+        if (_lock)
+            exitCollider.enabled = true;
+        else if (CanExit())
+            exitCollider.enabled = false;
+
+        Debug.Log("exitCollider: " + exitCollider.enabled.ToString());
     }
 
     public void GameExit() {
