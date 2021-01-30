@@ -6,6 +6,7 @@ public class PlayerInteractor : MonoBehaviour
 {
     public float interactMinDistance;
     public LayerMask interactMask;
+    public LayerMask entranceMask;
 
     Camera cam;
 
@@ -16,23 +17,26 @@ public class PlayerInteractor : MonoBehaviour
     void Update() {
         if (GameInput.Instance.interact) {
             Ray r = GetMousePointerRay();
-            bool interacts = DoesInteract(r);
+            bool interacts = DoesInteract(r, interactMask);
+            bool enters = DoesInteract(r, entranceMask);
 
             Debug.DrawLine(
                 r.origin,
                 r.origin + r.direction * interactMinDistance,
-                interacts ? Color.green : Color.red
+                (interacts || enters) ? Color.green : Color.red
             );
 
             if (interacts) {
                 Debug.Log("Interagiu!!");
+            } else if (enters){
+                GameStages.Instance.EnterTrain(transform.position);
             }
         }
     }
 
 
-    bool DoesInteract(Ray ray) {
-        return Physics.Raycast(ray, interactMinDistance, interactMask);
+    bool DoesInteract(Ray ray, LayerMask mask) {
+        return Physics.Raycast(ray, interactMinDistance, mask);
     }
 
     Ray GetMousePointerRay() {

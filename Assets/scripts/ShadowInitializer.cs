@@ -6,11 +6,23 @@ public class ShadowInitializer : MonoBehaviour
 {
     public CharacterMovement shadowPrefab;
     public Transform parentGroup;
-    public int shadowQuantity;
 
     public Vector2 areaMin, areaMax;
 
-    void Start() {
+    bool generated;
+
+    void EraseShadows() {
+        Transform newGroup = new GameObject(parentGroup.name).transform;
+        newGroup.SetParent(transform);
+        newGroup.position = parentGroup.position;
+        Destroy(parentGroup.gameObject);
+        parentGroup = newGroup;
+    }
+
+    public void GenerateShadows(int shadowQuantity) {
+        if (generated)
+            EraseShadows();
+
         for (int i = 0; i < shadowQuantity; ++i) {
             float x = Random.Range(areaMin.x, areaMax.x);
             float z = Random.Range(areaMin.y, areaMax.y);
@@ -24,6 +36,8 @@ public class ShadowInitializer : MonoBehaviour
 
             shadowMov.InitRoute(areaMin, areaMax);
         }
+
+        generated = true;
     }
 
     void OnDrawGizmos() {

@@ -60,7 +60,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 703b2dc75a4949fa293241730290e399, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  autorun: 0
+  autorun: 1
   alvoVec3: {x: 0, y: 0, z: 0}
   ignoreX: 0
   ignoreY: 1

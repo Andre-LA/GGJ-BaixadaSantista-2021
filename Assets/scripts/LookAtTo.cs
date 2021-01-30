@@ -15,9 +15,16 @@ public class LookAtTo : MonoBehaviour
         tr = GetComponent<Transform>();
     }
 
-    void Update() {
+    void Start() {
         if (autorun)
+            StartCoroutine(AutoLook());
+    }
+
+    IEnumerator AutoLook() {
+        while (true) {
+            yield return new WaitForSeconds(Random.Range(0.9f, 1.1f));
             Look();
+        }
     }
 
     public void Look() {
