@@ -4,15 +4,34 @@ using UnityEngine;
 
 public class LookAtTo : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+    public bool autorun;
+    public Vector3 alvoVec3;
+
+    public bool ignoreX, ignoreY, ignoreZ;
+
+    Transform tr;
+
+    void Awake() {
+        tr = GetComponent<Transform>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    void Start() {
+        if (autorun)
+            StartCoroutine(AutoLook());
+    }
+
+    IEnumerator AutoLook() {
+        while (true) {
+            yield return new WaitForSeconds(Random.Range(0.9f, 1.1f));
+            Look();
+        }
+    }
+
+    public void Look() {
+        tr.LookAt(new Vector3(
+            ignoreX ? transform.position.x : alvoVec3.x,
+            ignoreY ? transform.position.y : alvoVec3.y,
+            ignoreZ ? transform.position.z : alvoVec3.z
+        ));
     }
 }

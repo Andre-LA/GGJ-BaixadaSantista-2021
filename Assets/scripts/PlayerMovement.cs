@@ -6,9 +6,16 @@ public class PlayerMovement : MonoBehaviour
 {
     public Velocity velocity;
     public Rotator rotator;
+    public RaycastAnchor anchor;
+
+    public float walkEffect, walkEffectVel;
+    float anchorOffsetStart;
+    float walkEffectT;
+
 
     void Start() {
         Cursor.lockState = CursorLockMode.Locked;
+        anchorOffsetStart = anchor.offset.y;
     }
 
     void Update() {
@@ -22,8 +29,21 @@ public class PlayerMovement : MonoBehaviour
         velocity.direction.x = GameInput.Instance.horizontal;
         velocity.direction.z = GameInput.Instance.vertical;
 
-        if (velocity.direction.magnitude > 1)
+        float dirMag = velocity.direction.magnitude;
+
+        if (dirMag > 1)
             velocity.direction.Normalize();
+
+        dirMag = velocity.direction.magnitude;
+
+        if (dirMag > 0.1f) {
+            walkEffectT += dirMag * walkEffectVel * Time.deltaTime;
+        }
+
+        float sin = Mathf.Sin(walkEffectT);
+        Debug.Log(sin);
+
+        anchor.offset.y = anchorOffsetStart + sin * walkEffect;
 
         rotator.degrees.y =  GameInput.Instance.mouseX;
         rotator.degrees.x = -GameInput.Instance.mouseY;
