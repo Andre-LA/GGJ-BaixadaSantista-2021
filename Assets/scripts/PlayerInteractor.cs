@@ -8,11 +8,7 @@ public class PlayerInteractor : MonoBehaviour
     public LayerMask interactMask;
     public LayerMask entranceMask;
 
-    Camera cam;
-
-    void Awake() {
-        cam = FindObjectOfType<Camera>();
-    }
+    public Transform camTr;
 
     void Update() {
         if (GameInput.Instance.interact) {
@@ -24,8 +20,10 @@ public class PlayerInteractor : MonoBehaviour
             Debug.DrawLine(
                 r.origin,
                 r.origin + r.direction * interactMinDistance,
-                (interacts || enters) ? Color.green : Color.red
+                (interacts || enters) ? Color.green : Color.red,
+                0.1f
             );
+
 
             if (interacts) {
                 GameStages.Instance.Interacted(hitInteract);
@@ -45,6 +43,6 @@ public class PlayerInteractor : MonoBehaviour
     }
 
     Ray GetMousePointerRay() {
-        return cam.ScreenPointToRay(Input.mousePosition);
+        return new Ray(camTr.position, camTr.forward);
     }
 }
