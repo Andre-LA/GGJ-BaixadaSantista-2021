@@ -16,8 +16,9 @@ public class PlayerInteractor : MonoBehaviour
 
     void Update() {
         if (GameInput.Instance.interact) {
+            RaycastHit hitInteract;
             Ray r = GetMousePointerRay();
-            bool interacts = DoesInteract(r, interactMask);
+            bool interacts = DoesInteract(r, interactMask, out hitInteract);
             bool enters = DoesInteract(r, entranceMask);
 
             Debug.DrawLine(
@@ -27,13 +28,17 @@ public class PlayerInteractor : MonoBehaviour
             );
 
             if (interacts) {
-                Debug.Log("Interagiu!!");
+                GameStages.Instance.Interacted(hitInteract);
             } else if (enters){
                 GameStages.Instance.EnterTrain(transform.position);
             }
         }
     }
 
+
+    bool DoesInteract(Ray ray, LayerMask mask, out RaycastHit hit) {
+        return Physics.Raycast(ray, out hit, interactMinDistance, mask);
+    }
 
     bool DoesInteract(Ray ray, LayerMask mask) {
         return Physics.Raycast(ray, interactMinDistance, mask);
