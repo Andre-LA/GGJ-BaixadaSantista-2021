@@ -10,6 +10,7 @@ public class GameInput : MonoBehaviour
                  mouseX, mouseY;
 
     public bool interact, escape;
+    public bool toggleSmartphone;
 
     void Awake() {
         if (Instance != null)
@@ -27,5 +28,7 @@ public class GameInput : MonoBehaviour
 
         interact = Input.GetButtonDown("Submit");
         escape = Input.GetKeyDown(KeyCode.Escape);
+
+        toggleSmartphone = Input.GetKeyDown(KeyCode.Space);
     }
 }
