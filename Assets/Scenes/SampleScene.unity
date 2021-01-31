@@ -2107,7 +2107,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -5585,6 +5585,7 @@ MonoBehaviour:
   stationLine1: {fileID: 3693138714933195094}
   stationLine2: {fileID: 590158278}
   transitionImg: {fileID: 266449756}
+  finalImg: {fileID: 0}
   transitionSpeed: 0.5
   transitionCurve:
     serializedVersion: 2
