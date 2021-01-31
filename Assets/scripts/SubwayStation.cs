@@ -9,9 +9,13 @@ public class SubwayStation : MonoBehaviour
     public Transform redEnviroments, blueEnviroments, yellowEnviroments;
     public Transform refTeleport;
 
+    public CfgStationInfo stationInfo;
+
     public enum LineColor {
         Red, Blue, Yellow
     }
+
+    public bool isPrimary;
 
     LineColor stationColor;
     int stationIndex;
@@ -68,6 +72,8 @@ public class SubwayStation : MonoBehaviour
 
         SetLineColor(lineColor);
         AdjustShadowDensity(shadowDensity);
+
+        stationInfo.SetSign(isPrimary, stationIndex - 1);
     }
 
     public LineColor GetLineColor() {
