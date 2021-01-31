@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class LookAtPlayer : MonoBehaviour
 {
-    public Transform PlayerT;
+    public Transform playerT;
     void Start()
     {
         
@@ -13,8 +13,8 @@ public class LookAtPlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-        
+
+        transform.LookAt(playerT);
         
     }
 }
