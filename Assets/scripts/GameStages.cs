@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameStages : MonoBehaviour
@@ -10,7 +11,7 @@ public class GameStages : MonoBehaviour
     public float ZDivision;
     public SubwayStation stationLine1, stationLine2;
 
-    public Image transitionImg;
+    public Image transitionImg, finalImg;
     public float transitionSpeed;
     public AnimationCurve transitionCurve;
 
@@ -144,6 +145,10 @@ public class GameStages : MonoBehaviour
             inTransition = false;
     }
 
+    void OpenEnd() {
+        SceneManager.LoadScene("Final");
+    }
+
     void GoNextRed(int lineIndex) {
         Debug.Log("GoNextRed: " + lineIndex.ToString());
         SetExitLockState(true);
@@ -224,6 +229,6 @@ public class GameStages : MonoBehaviour
     }
 
     public void GameExit() {
-        Debug.Log("Jogo terminou!");
+        OpenEnd();
     }
 }
