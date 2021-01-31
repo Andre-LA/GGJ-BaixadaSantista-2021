@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class CfgStationInfo : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public Texture[] prim, sec;
+    public Color[] colors;
+    public MeshRenderer meshRendererPrim, meshRendererSec;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    public void SetSign(bool isPrimary, int idx) {
+        if (isPrimary) {
+            meshRendererPrim.material.mainTexture = prim[idx];
+            meshRendererPrim.material.color = colors[idx];
+        }
+        else {
+            meshRendererSec.material.mainTexture = sec[idx];
+            meshRendererSec.material.color = colors[idx];
+        }
     }
 }
