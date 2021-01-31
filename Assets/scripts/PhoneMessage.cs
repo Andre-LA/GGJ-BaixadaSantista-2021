@@ -59,7 +59,7 @@ public class PhoneMessage : MonoBehaviour
             messagePannel
         );
 
-        newMsg.Configure(owner, message, extraLines);
+        newMsg.Configure(owner, message, extraLines + 2);
     }
 
     public void PrepareMessage(bool isMessage, int puzzleIndex) {
