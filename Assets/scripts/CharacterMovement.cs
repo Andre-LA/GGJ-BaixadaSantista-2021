@@ -15,6 +15,8 @@ public class CharacterMovement : MonoBehaviour
 
     Transform tr;
 
+    float elapsedTime = 0;
+
     public bool showGizmos;
 
     void Awake() {
@@ -35,9 +37,12 @@ public class CharacterMovement : MonoBehaviour
     }
 
     void Update() {
-        if (Vector3.Distance(tr.position, routePoints[currentCounter]) < minDistance) {
+        elapsedTime += Time.deltaTime;
+
+        if (Vector3.Distance(tr.position, routePoints[currentCounter]) < minDistance || elapsedTime > 10f) {
             currentCounter = (currentCounter + 1) % routeCount;
             AdjustLook();
+            elapsedTime = 0f;
         }
     }
 
