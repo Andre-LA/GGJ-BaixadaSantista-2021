@@ -30,12 +30,14 @@ public class LookAtTo : MonoBehaviour
     }
 
     public void Look() {
-        var alvo = targetType == TargetType.useVector3 ? alvoVec3 : alvoTr.position;
+        var alvo = alvoVec3;
+
+        if (targetType == TargetType.useTransform)
+            alvo = alvoTr.position;
 
         var rotBefore = tr.eulerAngles;
 
-        if(targetType == TargetType.useTransform)
-            tr.LookAt(alvo);
+        tr.LookAt(alvo);
 
         var rot = tr.eulerAngles;
 
