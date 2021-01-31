@@ -1309,11 +1309,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!65 &730581676 stripped
+--- !u!65 &762632817 stripped
 BoxCollider:
   m_CorrespondingSourceObject: {fileID: 6128873596159503623, guid: f182dfc0dd06806d69e8ee2f2452c416,
     type: 3}
-  m_PrefabInstance: {fileID: 3693138714933195090}
+  m_PrefabInstance: {fileID: 590158277}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &770961346
 GameObject:
@@ -3098,7 +3098,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   puzzleStates: 00000000
   currentPuzzle: 0
-  exitCollider: {fileID: 730581676}
+  exitCollider: {fileID: 762632817}
 --- !u!1 &2086932401
 GameObject:
   m_ObjectHideFlags: 0
