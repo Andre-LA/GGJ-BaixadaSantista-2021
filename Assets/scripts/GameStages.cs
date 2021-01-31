@@ -20,6 +20,7 @@ public class GameStages : MonoBehaviour
     bool inTransition;
 
     public Collider exitCollider;
+    public CfgCatraca[] catracas;
 
     void Awake() {
         if (Instance != null)
@@ -209,11 +210,17 @@ public class GameStages : MonoBehaviour
 
     void SetExitLockState(bool _lock) {
         if (_lock)
-            exitCollider.enabled = true;
+            SetLock(true);
         else if (CanExit())
-            exitCollider.enabled = false;
+            SetLock(false);
 
         Debug.Log("exitCollider: " + exitCollider.enabled.ToString());
+    }
+
+    void SetLock(bool locked) {
+        exitCollider.enabled = locked;
+        for (int i = 0; i < catracas.Length; i++)
+            catracas[i].SetLock(locked);
     }
 
     public void GameExit() {
