@@ -16,11 +16,24 @@ public class RectTrLerp : MonoBehaviour
 
     public float speed;
     public bool reversed;
+    public bool loop;
 
     float t;
 
     void Update() {
         t = Mathf.Clamp01(t + Time.deltaTime * speed * (reversed ? -1 : 1));
+
+        if (loop && (reversed ? t < 0.01f : t > 0.99f))
+            Reset();
+
+        Lerp(t);
+    }
+
+    public void Reset() {
+        t = reversed ? 1f : 0f;
+    }
+
+    public void Lerp() {
         Lerp(t);
     }
 
