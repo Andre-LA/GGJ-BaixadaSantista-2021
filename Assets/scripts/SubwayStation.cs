@@ -51,7 +51,7 @@ public class SubwayStation : MonoBehaviour
         ));
 
         stationIndex = lineIndex;
-        shadowDensity = Random.Range(shadowDensity - 10, shadowDensity + 10);
+        shadowDensity = Random.Range(shadowDensity + 20, shadowDensity + + 30);
 
         DeactivateEnviroments(redEnviroments);
         DeactivateEnviroments(blueEnviroments);
