@@ -9,7 +9,7 @@ public class PhoneMessage : MonoBehaviour
 
     public CfgMessage msgPrefab;
     public RectTransform messagePannel;
-    public RectTrLerp rectLerp;
+    public RectTrLerp rectLerp, bellLerpActiveFx, bellLerpInactiveFx;
 
     public enum MessageId {
         None = -1,
@@ -42,8 +42,12 @@ public class PhoneMessage : MonoBehaviour
     void Update() {
         if (GameInput.Instance.toggleSmartphone && canClose) {
             rectLerp.reversed = !rectLerp.reversed;
-            if (currentMessage != MessageId.None)
+            if (currentMessage != MessageId.None) {
+                bellLerpInactiveFx.Reset();
+                bellLerpInactiveFx.enabled = true;
+                bellLerpActiveFx.enabled = false;
                 Message();
+            }
         }
     }
 
@@ -70,12 +74,12 @@ public class PhoneMessage : MonoBehaviour
                 puzzlesFeedbackSend[puzzleIndex] = true;
 
             Debug.Log("Preparing " + (isMessage ? "Message" : "PuzzleFeedback") + " on puzzle #" + puzzleIndex.ToString() + " -> " + currentMessage.ToString());
+
+            bellLerpActiveFx.Reset();
+            bellLerpInactiveFx.enabled = false;
+            bellLerpActiveFx.enabled = true;
         } else
             Debug.Log("Repeated message avoided");
-    }
-
-    public void Sing() {
-        Debug.Log("SING");
     }
 
     void Message() {

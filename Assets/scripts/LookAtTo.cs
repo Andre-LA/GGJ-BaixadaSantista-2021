@@ -6,6 +6,11 @@ public class LookAtTo : MonoBehaviour
 {
     public bool autorun;
     public Vector3 alvoVec3;
+    public Transform alvoTr;
+
+    public enum TargetType { useVector3, useTransform }
+
+    public TargetType targetType;
 
     public bool ignoreX, ignoreY, ignoreZ;
 
@@ -15,23 +20,32 @@ public class LookAtTo : MonoBehaviour
         tr = GetComponent<Transform>();
     }
 
-    void Start() {
+    void Update() {
         if (autorun)
-            StartCoroutine(AutoLook());
+            AutoLook();
     }
 
-    IEnumerator AutoLook() {
-        while (true) {
-            yield return new WaitForSeconds(Random.Range(0.9f, 1.1f));
-            Look();
-        }
+    void AutoLook() {
+        Look();
     }
 
     public void Look() {
-        tr.LookAt(new Vector3(
-            ignoreX ? transform.position.x : alvoVec3.x,
-            ignoreY ? transform.position.y : alvoVec3.y,
-            ignoreZ ? transform.position.z : alvoVec3.z
-        ));
+        var alvo = targetType == TargetType.useVector3 ? alvoVec3 : alvoTr.position;
+
+        var rotBefore = tr.eulerAngles;
+
+        if(targetType == TargetType.useTransform)
+            tr.LookAt(alvo);
+
+        var rot = tr.eulerAngles;
+
+        if (ignoreX)
+            rot.x = rotBefore.x;
+        if (ignoreY)
+            rot.y = rotBefore.y;
+        if (ignoreZ)
+            rot.z = rotBefore.z;
+
+        tr.eulerAngles = rot;
     }
 }
