@@ -96,10 +96,16 @@ public class PhoneMessage : MonoBehaviour
     IEnumerator Co_Message1() {
         canClose = false;
 
-        yield return new WaitForSeconds(0.3f);
-        AddMessage(CfgMessage.MessageOwner.Player, "Message1", 0);
         yield return new WaitForSeconds(0.5f);
-        AddMessage(CfgMessage.MessageOwner.Friend, "YEAH!", 0);
+        AddMessage(CfgMessage.MessageOwner.Friend, "Vai ser facinho chegar aqui", 0);
+        yield return new WaitForSeconds(1.8f);
+        AddMessage(CfgMessage.MessageOwner.Friend, "Eu só não me lembro exatamente dos trens que eu peguei", 2);
+        yield return new WaitForSeconds(1.6f);
+        AddMessage(CfgMessage.MessageOwner.Friend, "Mas sei como te explicar", 0);
+        yield return new WaitForSeconds(1.7f);
+        AddMessage(CfgMessage.MessageOwner.Friend, "Lembro que no primeiro trem havia uma máquina de refrigerante quebrada na plataforma", 5);
+        yield return new WaitForSeconds(1.4f);
+        AddMessage(CfgMessage.MessageOwner.Player, "Entendi. Vou procurar", 0);
         yield return new WaitForSeconds(0.2f);
 
         canClose = true;
@@ -109,10 +115,16 @@ public class PhoneMessage : MonoBehaviour
     IEnumerator Co_Message2() {
         canClose = false;
 
-        yield return new WaitForSeconds(0.3f);
-        AddMessage(CfgMessage.MessageOwner.Player, "Message2", 0);
         yield return new WaitForSeconds(0.5f);
-        AddMessage(CfgMessage.MessageOwner.Friend, "YEAH!", 0);
+        AddMessage(CfgMessage.MessageOwner.Friend, "Perfeito", 0);
+        yield return new WaitForSeconds(1f);
+        AddMessage(CfgMessage.MessageOwner.Friend, "Agora, lembro de entrar no trem quando encontrei aquela TV grande, na plataforma, com a nova série da Motflex, sei lá", 8);
+        yield return new WaitForSeconds(2f);
+        AddMessage(CfgMessage.MessageOwner.Friend, "Você está sempre assistindo na TV", 0);
+        yield return new WaitForSeconds(1f);
+        AddMessage(CfgMessage.MessageOwner.Friend, "Mas não me lembro se eu peguei outra linha, ou segui em frente para chegar até a TV", 4);
+        yield return new WaitForSeconds(2f);
+        AddMessage(CfgMessage.MessageOwner.Player, "Motflex??", 0);
         yield return new WaitForSeconds(0.2f);
 
         canClose = true;
@@ -122,10 +134,20 @@ public class PhoneMessage : MonoBehaviour
     IEnumerator Co_Message3() {
         canClose = false;
 
-        yield return new WaitForSeconds(0.3f);
-        AddMessage(CfgMessage.MessageOwner.Player, "Message3", 0);
         yield return new WaitForSeconds(0.5f);
-        AddMessage(CfgMessage.MessageOwner.Friend, "YEAH!", 0);
+        AddMessage(CfgMessage.MessageOwner.Friend, "Otimo querida", 0);
+        yield return new WaitForSeconds(1.8f);
+        AddMessage(CfgMessage.MessageOwner.Friend, "Só que agora as coisas podem ficar complicadas, pois eu peguei no sono nessa linha", 6);
+        yield return new WaitForSeconds(1.6f);
+        AddMessage(CfgMessage.MessageOwner.Friend, "Talvez eu tenha até dado a volta", 0);
+        yield return new WaitForSeconds(1.7f);
+        AddMessage(CfgMessage.MessageOwner.Friend, "Mas não se preocupe, você deve sentir um fedor horroroso de uma das lixeiras", 5);
+        yield return new WaitForSeconds(1.5f);
+        AddMessage(CfgMessage.MessageOwner.Friend, "Parece que não trocam ela há muito tempo", 1);
+        yield return new WaitForSeconds(1.4f);
+        AddMessage(CfgMessage.MessageOwner.Friend, "Assim que eu passei perto, entrei direto para dentro do trem", 3);
+        yield return new WaitForSeconds(1.4f);
+        AddMessage(CfgMessage.MessageOwner.Player, "Ainda não limparam essa lixeira?", 0);
         yield return new WaitForSeconds(0.2f);
 
         canClose = true;
@@ -135,10 +157,12 @@ public class PhoneMessage : MonoBehaviour
     IEnumerator Co_Message4() {
         canClose = false;
 
-        yield return new WaitForSeconds(0.3f);
-        AddMessage(CfgMessage.MessageOwner.Player, "Message4", 0);
         yield return new WaitForSeconds(0.5f);
-        AddMessage(CfgMessage.MessageOwner.Friend, "YEAH!", 0);
+        AddMessage(CfgMessage.MessageOwner.Friend, "Agora vá para a plataforma que tem a placa de inauguração da estação, e entre no trem", 5);
+        yield return new WaitForSeconds(1.8f);
+        AddMessage(CfgMessage.MessageOwner.Friend, "Não será difícil de achar. Essa placa me fez lembrar a primeira vez que andei de metrô", 6);
+        yield return new WaitForSeconds(1.6f);
+        AddMessage(CfgMessage.MessageOwner.Player, "Se não me engano essa foi a primeira linha do metro feita", 2);
         yield return new WaitForSeconds(0.2f);
 
         canClose = true;
@@ -148,10 +172,18 @@ public class PhoneMessage : MonoBehaviour
     IEnumerator Co_Message5() {
         canClose = false;
 
-        yield return new WaitForSeconds(0.3f);
-        AddMessage(CfgMessage.MessageOwner.Player, "Message5", 0);
         yield return new WaitForSeconds(0.5f);
-        AddMessage(CfgMessage.MessageOwner.Friend, "YEAH!", 0);
+        AddMessage(CfgMessage.MessageOwner.Friend, "Me perdoe querida", 0);
+        yield return new WaitForSeconds(1.8f);
+        AddMessage(CfgMessage.MessageOwner.Friend, "Preciso trocar esses meus óculos, mas eu consegui ajuda", 4);
+        yield return new WaitForSeconds(1.9f);
+        AddMessage(CfgMessage.MessageOwner.Friend, "Você só precisa vir até o ponto 4 da linha azul", 2);
+        yield return new WaitForSeconds(1.7f);
+        AddMessage(CfgMessage.MessageOwner.Friend, "Eu devia ter procurado ajuda antes, minha cabeça já não é mais a mesma", 5);
+        yield return new WaitForSeconds(1.9f);
+        AddMessage(CfgMessage.MessageOwner.Friend, "Estou te esperando", 0);
+        yield return new WaitForSeconds(2f);
+        AddMessage(CfgMessage.MessageOwner.Player, "Não se preocupe vovó. Estou indo", 0);
         yield return new WaitForSeconds(0.2f);
 
         canClose = true;
@@ -161,10 +193,12 @@ public class PhoneMessage : MonoBehaviour
     IEnumerator Co_PuzzleFeedback1() {
         canClose = false;
 
-        yield return new WaitForSeconds(0.3f);
-        AddMessage(CfgMessage.MessageOwner.Player, "PuzzleFeedback1", 0);
-        yield return new WaitForSeconds(0.5f);
-        AddMessage(CfgMessage.MessageOwner.Friend, "YEAH!", 0);
+        yield return new WaitForSeconds(0.8f);
+        AddMessage(CfgMessage.MessageOwner.Player, "Ok!", 0);
+        yield return new WaitForSeconds(1.5f);
+        AddMessage(CfgMessage.MessageOwner.Player, "Nossa essa maquina está horrível", 0);
+        yield return new WaitForSeconds(1.8f);
+        AddMessage(CfgMessage.MessageOwner.Player, "Mas já vou entrar no trem da linha amarela", 0);
         yield return new WaitForSeconds(0.2f);
 
         canClose = true;
@@ -174,10 +208,14 @@ public class PhoneMessage : MonoBehaviour
     IEnumerator Co_PuzzleFeedback2() {
         canClose = false;
 
-        yield return new WaitForSeconds(0.3f);
-        AddMessage(CfgMessage.MessageOwner.Player, "PuzzleFeedback2", 0);
-        yield return new WaitForSeconds(0.5f);
-        AddMessage(CfgMessage.MessageOwner.Friend, "YEAH!", 0);
+        yield return new WaitForSeconds(0.8f);
+        AddMessage(CfgMessage.MessageOwner.Player, "Ok, essa foi difícil!", 0);
+        yield return new WaitForSeconds(1.5f);
+        AddMessage(CfgMessage.MessageOwner.Player, "Encontrei a propaganda da série", 0);
+        yield return new WaitForSeconds(1f);
+        AddMessage(CfgMessage.MessageOwner.Player, "E é Notflix hahaha", 0);
+        yield return new WaitForSeconds(1.3f);
+        AddMessage(CfgMessage.MessageOwner.Player, "Estou entrando na linha azul então", 0);
         yield return new WaitForSeconds(0.2f);
 
         canClose = true;
@@ -187,10 +225,10 @@ public class PhoneMessage : MonoBehaviour
     IEnumerator Co_PuzzleFeedback3() {
         canClose = false;
 
-        yield return new WaitForSeconds(0.3f);
-        AddMessage(CfgMessage.MessageOwner.Player, "PuzzleFeedback3", 0);
-        yield return new WaitForSeconds(0.5f);
-        AddMessage(CfgMessage.MessageOwner.Friend, "YEAH!", 0);
+        yield return new WaitForSeconds(0.8f);
+        AddMessage(CfgMessage.MessageOwner.Player, "Apenas queria dizer que sinto inveja da sua habilidade de dormir em qualquer lugar haha", 7);
+        yield return new WaitForSeconds(1.5f);
+        AddMessage(CfgMessage.MessageOwner.Player, "Entrando no trem da linha amarela já!", 3);
         yield return new WaitForSeconds(0.2f);
 
         canClose = true;
@@ -200,10 +238,8 @@ public class PhoneMessage : MonoBehaviour
     IEnumerator Co_PuzzleFeedback4() {
         canClose = false;
 
-        yield return new WaitForSeconds(0.3f);
-        AddMessage(CfgMessage.MessageOwner.Player, "PuzzleFeedback4", 0);
-        yield return new WaitForSeconds(0.5f);
-        AddMessage(CfgMessage.MessageOwner.Friend, "YEAH!", 0);
+        yield return new WaitForSeconds(0.8f);
+        AddMessage(CfgMessage.MessageOwner.Player, "Estou entrando na linha vermelha, mas desse jeito vou voltar de onde eu vim", 4);
         yield return new WaitForSeconds(0.2f);
 
         canClose = true;
