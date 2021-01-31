@@ -20,7 +20,7 @@ public class LookAtTo : MonoBehaviour
         tr = GetComponent<Transform>();
     }
 
-    void Start() {
+    void Update() {
         if (autorun)
             AutoLook();
     }
@@ -34,7 +34,9 @@ public class LookAtTo : MonoBehaviour
 
         var rotBefore = tr.eulerAngles;
 
-        tr.LookAt(alvo);
+        if(targetType == TargetType.useTransform)
+            tr.LookAt(alvo);
+
         var rot = tr.eulerAngles;
 
         if (ignoreX)
