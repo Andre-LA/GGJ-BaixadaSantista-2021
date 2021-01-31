@@ -100,6 +100,7 @@ public class PhoneMessage : MonoBehaviour
     IEnumerator Co_Message1() {
         canClose = false;
 
+<<<<<<< Updated upstream
         yield return new WaitForSeconds(0.5f);
         AddMessage(CfgMessage.MessageOwner.Friend, "Vai ser facinho chegar aqui", 0);
         yield return new WaitForSeconds(1.8f);
@@ -109,6 +110,18 @@ public class PhoneMessage : MonoBehaviour
         yield return new WaitForSeconds(1.7f);
         AddMessage(CfgMessage.MessageOwner.Friend, "Lembro que no primeiro trem havia uma máquina de refrigerante quebrada na plataforma", 5);
         yield return new WaitForSeconds(1.4f);
+=======
+        yield return new WaitForSeconds(0.3f);
+        AddMessage(CfgMessage.MessageOwner.Friend, "Vai ser facinho chegar aqui", 0);
+        yield return new WaitForSeconds(0.4f);
+        AddMessage(CfgMessage.MessageOwner.Friend, "Eu só não me lembro exatamente dos trens que eu peguei", 0);
+        yield return new WaitForSeconds(0.2f);
+        AddMessage(CfgMessage.MessageOwner.Friend, "Mas sei como te explicar", 0);
+        yield return new WaitForSeconds(0.6f);
+        AddMessage(CfgMessage.MessageOwner.Friend, "Lembro que no primeiro trem havia uma máquina de refrigerante quebrada na plataforma", 0);
+        
+        yield return new WaitForSeconds(0.5f);
+>>>>>>> Stashed changes
         AddMessage(CfgMessage.MessageOwner.Player, "Entendi. Vou procurar", 0);
         yield return new WaitForSeconds(0.2f);
 
@@ -197,12 +210,21 @@ public class PhoneMessage : MonoBehaviour
     IEnumerator Co_PuzzleFeedback1() {
         canClose = false;
 
+<<<<<<< Updated upstream
         yield return new WaitForSeconds(0.8f);
         AddMessage(CfgMessage.MessageOwner.Player, "Ok!", 0);
         yield return new WaitForSeconds(1.5f);
         AddMessage(CfgMessage.MessageOwner.Player, "Nossa essa maquina está horrível", 0);
         yield return new WaitForSeconds(1.8f);
         AddMessage(CfgMessage.MessageOwner.Player, "Mas já vou entrar no trem da linha amarela", 0);
+=======
+        yield return new WaitForSeconds(0.3f);
+        AddMessage(CfgMessage.MessageOwner.Player, "Ok!", 0);
+        yield return new WaitForSeconds(0.5f);
+        AddMessage(CfgMessage.MessageOwner.Friend, "Nossa essa maquina está horrível", 0);
+        yield return new WaitForSeconds(0.5f);
+        AddMessage(CfgMessage.MessageOwner.Friend, "Mas já vou entrar no trem da linha amarela", 0);
+>>>>>>> Stashed changes
         yield return new WaitForSeconds(0.2f);
 
         canClose = true;
