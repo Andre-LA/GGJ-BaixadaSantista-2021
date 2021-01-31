@@ -88,7 +88,7 @@ MonoBehaviour:
   anchorX: 0
   anchorY: 1
   anchorZ: 0
-  offset: {x: 0, y: 0.5, z: 0}
+  offset: {x: 0, y: 0.55, z: 0}
 --- !u!114 &5686900346414593537
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -136,6 +136,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 9d60ded5b97b70fb2a08fb55e0ab8715,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.25
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 9d60ded5b97b70fb2a08fb55e0ab8715,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 9d60ded5b97b70fb2a08fb55e0ab8715,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.25
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9d60ded5b97b70fb2a08fb55e0ab8715,
         type: 3}

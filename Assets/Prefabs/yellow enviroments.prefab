@@ -187,40 +187,6 @@ Transform:
   m_Father: {fileID: 5062140849720100326}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &275974021056430657
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 491592407257673485}
-    m_Modifications:
-    - target: {fileID: 1948278301447410195, guid: d00dd0fd94cf2f03e94d176eb27c6db6,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1948278301447410195, guid: d00dd0fd94cf2f03e94d176eb27c6db6,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1948278301447410195, guid: d00dd0fd94cf2f03e94d176eb27c6db6,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1948278301447410195, guid: d00dd0fd94cf2f03e94d176eb27c6db6,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5956640549737490503, guid: d00dd0fd94cf2f03e94d176eb27c6db6,
-        type: 3}
-      propertyPath: m_Name
-      value: lixeira amarela
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: d00dd0fd94cf2f03e94d176eb27c6db6, type: 3}
 --- !u!1001 &356019847386603183
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -417,7 +383,7 @@ PrefabInstance:
     - target: {fileID: 4788137821861720322, guid: 09fff09e73d28ec48833f2c783fe7da4,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4788137821861720322, guid: 09fff09e73d28ec48833f2c783fe7da4,
         type: 3}
@@ -603,45 +569,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 4326816062379334354}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &5976138615496683141
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 491592407257673485}
-    m_Modifications:
-    - target: {fileID: 1948278301447410195, guid: 25488eb1101be16b1b3783e82b83959d,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1948278301447410195, guid: 25488eb1101be16b1b3783e82b83959d,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1948278301447410195, guid: 25488eb1101be16b1b3783e82b83959d,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1948278301447410195, guid: 25488eb1101be16b1b3783e82b83959d,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1948278301447410195, guid: 25488eb1101be16b1b3783e82b83959d,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5956640549737490503, guid: 25488eb1101be16b1b3783e82b83959d,
-        type: 3}
-      propertyPath: m_Name
-      value: lixeira azul
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 25488eb1101be16b1b3783e82b83959d, type: 3}
 --- !u!1001 &6215322642352774413
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -741,7 +668,7 @@ PrefabInstance:
     - target: {fileID: 4788137821861720322, guid: 09fff09e73d28ec48833f2c783fe7da4,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4788137821861720322, guid: 09fff09e73d28ec48833f2c783fe7da4,
         type: 3}
@@ -810,42 +737,3 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 09fff09e73d28ec48833f2c783fe7da4, type: 3}
---- !u!1001 &7586343827935004513
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 491592407257673485}
-    m_Modifications:
-    - target: {fileID: 2000072786532074216, guid: 4a023b440e8794b738ae3b273d091ee1,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2000072786532074216, guid: 4a023b440e8794b738ae3b273d091ee1,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2000072786532074216, guid: 4a023b440e8794b738ae3b273d091ee1,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2000072786532074216, guid: 4a023b440e8794b738ae3b273d091ee1,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2000072786532074216, guid: 4a023b440e8794b738ae3b273d091ee1,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5936375797827647676, guid: 4a023b440e8794b738ae3b273d091ee1,
-        type: 3}
-      propertyPath: m_Name
-      value: lixeira
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 4a023b440e8794b738ae3b273d091ee1, type: 3}
