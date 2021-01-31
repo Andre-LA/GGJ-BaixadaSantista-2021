@@ -62,9 +62,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   autorun: 1
   alvoVec3: {x: 0, y: 0, z: 0}
-  ignoreX: 0
-  ignoreY: 1
-  ignoreZ: 0
+  alvoTr: {fileID: 0}
+  targetType: 0
+  ignoreX: 1
+  ignoreY: 0
+  ignoreZ: 1
 --- !u!114 &1231534318579613748
 MonoBehaviour:
   m_ObjectHideFlags: 0
