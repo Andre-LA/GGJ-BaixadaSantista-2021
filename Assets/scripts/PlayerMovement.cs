@@ -41,11 +41,16 @@ public class PlayerMovement : MonoBehaviour
         }
 
         float sin = Mathf.Sin(walkEffectT);
-        Debug.Log(sin);
 
         anchor.offset.y = anchorOffsetStart + sin * walkEffect;
 
         rotator.degrees.y =  GameInput.Instance.mouseX;
         rotator.degrees.x = -GameInput.Instance.mouseY;
+    }
+
+    void OnTriggerEnter(Collider col) {
+        if (col.CompareTag("ExitTrigger")) {
+            GameStages.Instance.GameExit();
+        }
     }
 }

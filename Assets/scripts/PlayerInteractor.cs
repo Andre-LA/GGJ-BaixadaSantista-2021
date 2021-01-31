@@ -8,26 +8,25 @@ public class PlayerInteractor : MonoBehaviour
     public LayerMask interactMask;
     public LayerMask entranceMask;
 
-    Camera cam;
-
-    void Awake() {
-        cam = FindObjectOfType<Camera>();
-    }
+    public Transform camTr;
 
     void Update() {
         if (GameInput.Instance.interact) {
+            RaycastHit hitInteract;
             Ray r = GetMousePointerRay();
-            bool interacts = DoesInteract(r, interactMask);
+            bool interacts = DoesInteract(r, interactMask, out hitInteract);
             bool enters = DoesInteract(r, entranceMask);
 
             Debug.DrawLine(
                 r.origin,
                 r.origin + r.direction * interactMinDistance,
-                (interacts || enters) ? Color.green : Color.red
+                (interacts || enters) ? Color.green : Color.red,
+                0.1f
             );
 
+
             if (interacts) {
-                Debug.Log("Interagiu!!");
+                GameStages.Instance.Interacted(hitInteract);
             } else if (enters){
                 GameStages.Instance.EnterTrain(transform.position);
             }
@@ -35,11 +34,15 @@ public class PlayerInteractor : MonoBehaviour
     }
 
 
+    bool DoesInteract(Ray ray, LayerMask mask, out RaycastHit hit) {
+        return Physics.Raycast(ray, out hit, interactMinDistance, mask);
+    }
+
     bool DoesInteract(Ray ray, LayerMask mask) {
         return Physics.Raycast(ray, interactMinDistance, mask);
     }
 
     Ray GetMousePointerRay() {
-        return cam.ScreenPointToRay(Input.mousePosition);
+        return new Ray(camTr.position, camTr.forward);
     }
 }
