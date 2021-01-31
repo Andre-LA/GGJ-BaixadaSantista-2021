@@ -9,7 +9,7 @@ public class CfgMessage : MonoBehaviour
         Player, Friend
     }
 
-    public RectTransform myRect, msgRect;
+    public RectTransform myRect, msgRect, imgRect;
     public Text msgTxt;
     public Image msgBgImg;
 
@@ -23,14 +23,18 @@ public class CfgMessage : MonoBehaviour
         var sdelta = myRect.sizeDelta;
         var amin = msgRect.anchorMin;
         var amax = msgRect.anchorMax;
+        var alscale = imgRect.localScale;
 
-        sdelta.y = 20 + 5 * extraLines;
+        sdelta.y = 25 + 5 * extraLines;
 
         amin.x = owner == MessageOwner.Player ? 0.2f : 0;
         amax.x = owner == MessageOwner.Player ? 1f : 0.8f;
+        alscale.x = owner == MessageOwner.Player ? -1f : 1f;
+        alscale.y = owner == MessageOwner.Player ? -1f : 1f;
 
         myRect.sizeDelta = sdelta;
         msgRect.anchorMin = amin;
         msgRect.anchorMax = amax;
+        imgRect.localScale = alscale;
     }
 }
