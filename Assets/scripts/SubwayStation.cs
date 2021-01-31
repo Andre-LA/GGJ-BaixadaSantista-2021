@@ -4,18 +4,16 @@ using UnityEngine;
 
 public class SubwayStation : MonoBehaviour
 {
-    public MeshRenderer lineColorMat;
+    public MeshRenderer lineColorMat1, lineColorMat2;
     public ShadowInitializer shadowInitializer;
     public Transform redEnviroments, blueEnviroments, yellowEnviroments;
     public Transform refTeleport;
 
-    public CfgStationInfo stationInfo;
+    public CfgStationInfo stationInfo, otherStationInfo;
 
     public enum LineColor {
-        Red, Blue, Yellow
+        Red = 0, Blue = 1, Yellow = 2
     }
-
-    public bool isPrimary;
 
     LineColor stationColor;
     int stationIndex;
@@ -29,7 +27,8 @@ public class SubwayStation : MonoBehaviour
             case LineColor.Yellow: color = Color.yellow; break;
         }
 
-        lineColorMat.material.color = color;
+        lineColorMat1.material.color = color;
+        lineColorMat2.material.color = color;
         stationColor = lineColor;
     }
 
@@ -73,7 +72,8 @@ public class SubwayStation : MonoBehaviour
         SetLineColor(lineColor);
         AdjustShadowDensity(shadowDensity);
 
-        stationInfo.SetSign(isPrimary, stationIndex - 1);
+        stationInfo.SetSign(true, stationIndex - 1, (int)lineColor);
+        otherStationInfo.SetSign(false, stationIndex - 1, (int)lineColor);
     }
 
     public LineColor GetLineColor() {
