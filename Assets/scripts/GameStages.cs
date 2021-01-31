@@ -29,6 +29,8 @@ public class GameStages : MonoBehaviour
 
     void Start() {
         Red_1();
+        PhoneMessage.Instance.PrepareMessage(true, currentPuzzle);
+        PhoneMessage.Instance.Sing();
     }
 
 #region Routes
@@ -101,7 +103,6 @@ public class GameStages : MonoBehaviour
         var isFirstStation = IsPosOnFirstStation(playerPosZ);
 
         var station = isFirstStation ? stationLine1 : stationLine2;
-        var otherStation = isFirstStation ? stationLine2 : stationLine1;
 
         var lineColor = station.GetLineColor();
         var lineIndex = station.GetLineIndex();
@@ -118,6 +119,9 @@ public class GameStages : MonoBehaviour
         playerTr.rotation = stationToTeleport.refTeleport.rotation;
 
         yield return StartCoroutine(Transition(false));
+
+        PhoneMessage.Instance.PrepareMessage(true, currentPuzzle);
+        PhoneMessage.Instance.Sing();
     }
 
     IEnumerator Transition(bool hiding) {
@@ -193,6 +197,7 @@ public class GameStages : MonoBehaviour
         if (puzzle != null && puzzle.puzzleIndex == currentPuzzle) {
             puzzleStates[puzzle.puzzleIndex] = true;
             currentPuzzle++;
+            PhoneMessage.Instance.PrepareMessage(false, puzzle.puzzleIndex);
             PhoneMessage.Instance.Sing();
         }
     }
