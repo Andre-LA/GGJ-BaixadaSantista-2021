@@ -30,7 +30,6 @@ public class GameStages : MonoBehaviour
     void Start() {
         Red_1();
         PhoneMessage.Instance.PrepareMessage(true, currentPuzzle);
-        PhoneMessage.Instance.Sing();
     }
 
 #region Routes
@@ -121,7 +120,6 @@ public class GameStages : MonoBehaviour
         yield return StartCoroutine(Transition(false));
 
         PhoneMessage.Instance.PrepareMessage(true, currentPuzzle);
-        PhoneMessage.Instance.Sing();
     }
 
     IEnumerator Transition(bool hiding) {
@@ -198,7 +196,6 @@ public class GameStages : MonoBehaviour
             puzzleStates[puzzle.puzzleIndex] = true;
             currentPuzzle++;
             PhoneMessage.Instance.PrepareMessage(false, puzzle.puzzleIndex);
-            PhoneMessage.Instance.Sing();
         }
     }
 
